@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+
+<title>D' Chicos Pagina Principal</title>
+
+<link rel="stylesheet" type="text/css" href="assets/css/style.css" /> 
+<link rel="stylesheet" type="text/css" href="assets/css/sliderwall_thumbs_skin.css"/>	<!-- Include the CSS of the slider (the slider skin). -->
+<link rel="stylesheet" type="text/css" href="assets/css/slideshow_sample.css"/>				<!-- The general CSS of the entire HTML page. -->
+
+<script type="text/javascript" src="assets/js/jquery-1.7.1.min.js"></script>			<!-- You must include the JQuery file. -->
+<script type="text/javascript" src="assets/js/sliderwall-thumbs-1.1.2.js"></script>	<!-- You must include the SliderWall template. -->
+<script type="text/javascript" src="assets/js/main.js"></script>
+
+</head>
+
+<body>
+    <div id="main">
+        
+        {embed="shared/header"}  
+            
+        <div id="site_content">
+         
+            {embed="shared/imageSliderShow"}
+                
+            {embed="shared/sidebar"}
+                
+            <div class="content">
+                <img class="image" src="assets/images/cont3.gif" alt="Bienvenido">
+                <img class="image-left image_bebe" src="assets/images/bebe.jpg" width="130" height="150" alt="DChicos">
+                <p>D'Chicos consciente de la importancia de la seguridad y comodidad para los bebés, ha desarrollado una amplia línea de productos especializados que cumplen con todas las exigencias del mercado tanto en calidad como en precio.</p>
+                <p> D'Chicos presenta una amplia línea en sillas de carro, boosters, sillas de comer. Una extensa variedad de cunas, encierros simples y con móviles, donde el bebé tendrá los más tiernos sueños. </p> 
+                <p>Además contamos con la línea más completa en coches de todo tipo tanto sombrilla como de llanta grande, que se ajustan a todas las necesidades de los nuevos papás. Lo invitamos a conocer toda la línea D'Chicos y si tiene alguna consulta con gusto lo atenderemos.</p>       
+             
+                 <form id="frmlogin" method="post" action="assets/php/Submit.php">
+                     <input class="input_form" name="user" id="user" placeholder="  Usuario">
+                     <input class="input_form" name="password" id="password" placeholder="  Contraseña" type="password"/><br><br>
+                     <input type="radio" name="radio" checked="checked" value="publicidad">Publicidad
+                     <input type="radio" name="radio" id="admin" value="archivos">Administracion de Archivos<br><br>
+                     <input class="botton_submit" type="submit" value="Ingresar Usuario" />    	
+                 </form>
+             
+                {embed="shared/photobanner"}
+            
+            </div>
+        </div>
+        
+        {embed="shared/footer"}
+        
+    </div>
+</body>
+</html>

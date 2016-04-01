@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+
+<title>D' Chicos Galeria</title>
+
+<link rel="stylesheet" type="text/css" href="assets/css/style.css" /> 
+<link rel="stylesheet" type="text/css" href="assets/css/sliderwall_thumbs_skin.css"/>	<!-- Include the CSS of the slider (the slider skin). -->
+<link rel="stylesheet" type="text/css" href="assets/css/slideshow_sample.css"/>				<!-- The general CSS of the entire HTML page. -->
+<link href="assets/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/kGallery.css" />
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="assets/js/kGallery-full.min.js"></script>	
+<script src="assets/js/jquery-1.9.1.js"></script>
+<script src="assets/js/jquery-ui-1.10.3.custom.js"></script>
+<script type="text/javascript" src="assets/js/sliderwall-thumbs-1.1.2.js"></script>	<!-- You must include the SliderWall template. -->
+<script type="text/javascript" src="assets/js/galeria.js"></script>
+
+
+</head>
+
+<body>
+	<div id="main">
+		
+     {embed="shared/header"}   
+        
+     <div id="site_content">	        
+        
+		       
+        <div class="sidebar_galery">
+          <h2 align="center" class="categoriasTitle">Para ver una galeria elija una Categoria</h2>
+          <ul>
+          	<div class="Columna">
+            	<li><a onclick="accesorios_invierno()">Accesorios de Invierno</a></li>
+            	<li><a onclick="accesorios_bano()">Accesorios para el Ba&ntilde;o</a></li>
+            	<li><a onclick="albunes_fotos()">Albunes de Fotos</a></li>
+            	<li><a onclick="almohadas_cojines()">Almohadas y cojines</a></li>
+            	<li><a onclick="andaderas()">Andaderas</a></li>
+            	<li><a onclick="verano()">Articulos para Verano</a></li>
+            	<li><a onclick="aspiradores_nasales()">Aspiradores Nasales</a></li>
+            	<li><a onclick="barranda_cama()">Baranda para Cama</a></li>
+            	<li><a onclick="biberones()">Biberones</a></li>
+            	<li><a onclick="bolsas_regalo()">Bolsas de Regalo</a></li>
+            </div>
+            <div class="Columna">	
+                <li><a onclick="cadenitas_chupeta()">Cadenitas para Chupeta</a></li>
+            	<li><a onclick="cargadores()">Cargadores</a></li>
+            	<li><a onclick="cepillos()">Cepillos</a></li>
+            	<li><a onclick="chillones()">Chillones</a></li>
+            	<li><a onclick="chupetas()">Chupetas</a></li>
+            	<li><a onclick="cobijas()">Cobijas</a></li>
+            	<li><a onclick="coche_gemelos()">Coches para Gemelos</a></li>
+            	<li><a onclick="coches_silla()">Coches con Silla para Auto</a></li>
+            	<li><a onclick="coches_sombrilla()">Coches Sombrilla</a></li>
+            	<li><a onclick="corrales()">Corrales</a></li>
+            </div>
+            <div class="Columna">
+            	<li><a onclick="cuchara()">Cucharas</a></li>
+            	<li><a onclick="lactancia()">Lactancia</a></li>
+            	<li><a onclick="cortaunas()">Corta U&ntilde;as</a></li>
+            	<li><a onclick="fajeros_guantes()">Fajeros y Guantes</a></li>
+            	<li><a onclick="gimnacio_bebe()">Gimnacio para Bebe</a></li>
+            	<li><a onclick="gorritos_bebe()">Gorritos para Bebe</a></li>
+            	<li><a onclick="jugueteria()">Jugueteria</a></li>
+            	<li><a onclick="envases()">Envases para Leche</a></li>
+            	<li><a onclick="mochilas_ninos()">Mochilas para ninos</a></li>
+            	<li><a onclick="moises_bebe()">Moises para Bebe</a></li>
+            </div>   
+            <div class="Columna">	
+                <li><a onclick="mordedores()">Mordedores</a></li>
+            	<li><a onclick="moviles_cajas()">Moviles y Cajas Musicales</a></li>
+            	<li><a onclick="pijamas()">Pijamas</a></li>
+            	<li><a onclick="platos_bebe()">Platos para Bebe</a></li>
+            	<li><a onclick="repuestos()">Repuestos para Biberon</a></li>
+            	<li><a onclick="sabanas_edredones()">Sabanas y Edredones</a></li>
+            	<li><a onclick="sillas_comer()">Sillas para Comer</a></li>
+            	<li><a onclick="sillas_buster()">Sillas y Buster</a></li>
+            	<li><a onclick="toldos_cuna()">Toldos para Cuna y Cama</a></li>
+            	<li><a onclick="zapatos()">Zapatos para Ni&ntilde;os y Ni&ntilde;as</a></li>
+            </div>
+          </ul> 
+        </div>
+     
+      
+      <div class="content_galeria">
+      
+            {embed="shared/galeria" categoria="segment_2"}        
+          
+      </div> 
+
+    </div>
+    
+     <p align="center" style="opacity: 0.8;">Si desea ver el catalogo completo de productos por favor <a href="/contactenos">haga click aqui para solicitarlo</a></p>
+
+    {embed="shared/footer"}
+    
+  </div>
+</body>
+</html>

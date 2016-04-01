@@ -1,0 +1,365 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+
+<title>D' Chicos Pagina Principal</title>
+
+<link rel="stylesheet" type="text/css" href="css/style.css" /> 
+<link rel="stylesheet" type="text/css" href="css/sliderwall_thumbs_skin.css"/>	<!-- Include the CSS of the slider (the slider skin). -->
+<link rel="stylesheet" type="text/css" href="css/slideshow_sample.css"/>				<!-- The general CSS of the entire HTML page. -->
+
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>			<!-- You must include the JQuery file. -->
+<script type="text/javascript" src="js/sliderwall-thumbs-1.1.2.js"></script>	<!-- You must include the SliderWall template. -->
+
+<script type="text/javascript">
+var mySlider;	// A reference to the SliderWall instance.
+var err;
+// Initialize the slider.
+$(document).ready(function() {
+	try {
+		// imageSlideshow is the id of the <div> tag that will contain the SliderWall instance.
+		$("#imageSlideshow").sliderWallThumbs({
+			// general options
+			cssClassSuffix: "",
+			domainKeys: "",
+			imageAlign: "middleCenter", /* topLeft, topCenter, topRight, middleLeft, middleCenter (default), middleRight, bottomLeft, bottomCenter, bottomRight */
+			imageScaleMode: "scaleCrop", /* scale, scaleCrop (default), crop, stretch */
+			loopContent: true,
+			rssFeed: null,
+			selectableContent: true,
+			
+			// slideshow options
+			autoSlideShow: true,
+			slideShowSpeed: 6,
+			
+			// timer control options
+			showTimer: true,
+			timerPosition: "belowControlBar", /* aboveControlBar, belowControlBar (default) */
+			
+			// control bar options
+			autoHideControlBar: true,
+			controlsHideDelay: 5,
+			controlsShowHideSpeed: 0.2,
+			showControlBar: true,
+			
+			// navigation options
+			autoHideNavButtons: true,
+			showNavigationButtons: true,
+			
+			// text options
+			autoHideText: true,
+			
+			// interaction options
+			useGestures: true,
+			useKeyboard: true,
+			useMouseScroll: true,
+			pauseOnMouseOver: false,
+			disableAutohideOnMouseOver: false,
+			
+			// transitions
+			transitionType: {
+				optimizeForIpad: false,  /* If set to true, it would use only the Alpha and Slide effects. */
+				random: false,
+				transitions: [
+					/*
+					Possible transitions: Alpha, AlphaBars, BrightSquares, Disc, FlipBars, Iris, LensGlare, None, Slide, SquareFade, SquareLight, Stripes, Waves, WaveScale, Wavy
+					Possible tween types: Back, Bounce, Circ, Cubic, Elastic, Expo (default), Quad, Quart, Quint, Sine
+					Possible easing types: easeIn, easeOut, easeInOut
+					*/
+				/*	{
+						name: "Alpha",
+						duration: 0.75,
+						tweenType: "Expo",
+						easing: "easeInOut"
+					}, 
+					{
+						name: "AlphaBars",
+						duration: 1,
+						tweenType: "Expo",
+						easing: "easeOut",
+						direction: "l2r",
+						random: false,
+						barWidth: 50
+					}, */
+					{
+						name: "BrightSquares",
+						duration: 1,
+						tweenType: "Expo",
+						easing: "easeOut",
+						direction: "tl2br",
+						random: false,
+						tileWidth: 100,
+						tileHeight: 100
+					}, 
+					/*{
+						name: "Disc",
+						duration: 1,
+						tweenType: "Expo",
+						easing: "easeInOut"
+					}, 
+					{
+						name: "FlipBars",
+						duration: 1,
+						tweenType: "Expo",
+						easing: "easeOut",
+						direction: "l2r",
+						random: false,
+						barWidth: 80
+					}, 
+					{
+						name: "Iris",
+						duration: 1,
+						tweenType: "Expo",
+						easing: "easeInOut"
+					}, */
+					{
+						name: "LensGlare",
+						duration: 1,
+						tweenType: "Expo",
+						easing: "easeOut",
+						gradientWidth: 100,
+						margins: 20,
+						lightOffset: 0,
+						lightDirection: false
+					}, 
+					/*
+					{
+					name: "None" //This is the setting if you don't want to apply any transition effects.
+					},
+					*/
+					/*{
+						name: "Slide",
+						duration: 0.75,
+						tweenType: "Expo",
+						easing: "easeInOut",
+						direction: "horizontal"
+					}, 
+					{
+						name: "SquareFade",
+						duration: 1.5,
+						tweenType: "Expo",
+						easing: "easeOut",
+						direction: "tl2br",
+						random: false,
+						tileWidth: 100,
+						tileHeight: 100
+					},
+					{
+						name: "SquareLight",
+						duration: 1,
+						tweenType: "Expo",
+						easing: "easeOut",
+						direction: "tl2br",
+						random: false,
+						tileWidth: 100,
+						tileHeight: 100
+					}, 
+					{
+						name: "Stripes",
+						duration: 1.5,
+						tweenType: "Expo",
+						easing: "easeInOut",
+						direction: "l2r",
+						random: false,
+						barWidth: 50
+					}, 
+					{
+						name: "Waves",
+						duration: 1,
+						tweenType: "Expo",
+						easing: "easeIn",
+						direction: "l2r",
+						random: false,
+						barWidth: 60
+					}, */
+					{
+						name: "WaveScale",
+						duration: 1.5,
+						tweenType: "Expo",
+						easing: "easeOut",
+						maxWidth: 100
+					}, 
+				/*	{
+						name: "Wavy",
+						duration: 1,
+						tweenType: "Expo",
+						easing: "easeOut",
+						direction: "l2r",
+						random: false,
+						barWidth: 60
+					}*/
+				]
+			},
+			
+			// callback functions
+			init: null,
+			contentLoadStart: null,
+			contentLoadComplete: null,
+			contentLoadError: null,
+			contentShow: null,
+			contentHide: null,
+			slideClick: null,
+			slideshowStart: null,
+			slideshowStop: null,
+			pageChange: null
+		});
+		
+		// This is how you get a reference to the SliderWall object to call 
+		// SliderWall methods (mySlider.next(), mySlider.getSelectedIndex()).
+		mySlider = $("#imageSlideshow").data("sliderWall");
+		
+	} catch(err) { /* handle any error messages */ }
+});
+</script>
+</head>
+
+<body>
+	<div id="main">
+		<header>
+          <div id="logo">
+            <div id="logo_text">
+              <!-- class="logo_colour", allows you to change the colour of the text -->
+              <img class="image-right image" src="images/logo2.gif" alt="alquiler de trampolin alquiler de inflable">
+              <img class="image-left" src="images/logo1.gif" alt="alquiler de trampolin alquiler de inflable">
+              <h1><a href="index.html"><b>D' Chicos</b></a></h1>
+              <h2>Siempre pensado en los niños</h2>
+            </div>
+          </div>
+          <nav>
+            <div id="menu_container">
+              <ul class="sf-menu" id="nav">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="sobrenosotros.html">Sobre Nosotros</a></li>
+                <li><a href="contactenos.html">Contactenos</a></li>
+              </ul>
+            </div>
+          </nav>            
+        </header>
+        
+     <div id="site_content">
+     
+		<div id="imageSlideshow"> <!-- The slider will be placed within this <div> tag. -->
+			<div rel="slider_content" style="display: none;"> <!-- Define the structure and content for the slider. -->
+				<div rel="slide">
+					<div rel="type">image</div>
+					<!--<div rel="title">Title 2</div>
+					<div rel="description">Description 2 (click on the image to open somesite.com)</div>-->
+					<div rel="content">images/slide1.jpg</div>
+					<div rel="thumbnail">images/slide1.jpg</div>
+					<!--<div rel="target_url">http://www.somesite.com</div>
+					<div rel="target_window">_blank</div>-->
+				</div>
+				<div rel="slide">
+					<div rel="type">image</div>
+					<!--<div rel="title">Title 2</div>
+					<div rel="description">Description 2 (click on the image to open somesite.com)</div>-->
+					<div rel="content">images/slide2.jpg</div>
+					<div rel="thumbnail">images/slide2.jpg</div>
+					<!--<div rel="target_url">http://www.somesite.com</div>
+					<div rel="target_window">_blank</div>-->
+				</div>
+				<div rel="slide">
+					<div rel="type">image</div>
+					<!--<div rel="title">Title 3</div>
+					<div rel="description">Description 3 (click on the image to open somesite.com)</div>-->
+					<div rel="content">images/slide3.jpg</div>
+					<div rel="thumbnail">images/slide3.jpg</div>
+					<!--<div rel="target_url">http://www.somesite.com</div>
+					<div rel="target_window">_blank</div>-->
+				</div>
+				
+			</div>
+		</div> <!-- end SliderWall definition and structure -->
+		
+		<div id="sidebar_container">
+        <div class="sidebar">
+          <h3 align="center">Ultimas Noticias</h3>
+         <h5><b>Coche y Silla Cargadora</b></h5>
+          <p>Conozca el Coche y Silla cargadora, visita nuestra galeria y conoce mas.</p>
+        </div>
+        <div class="sidebar">
+          <h3 align="center">Categorias</h3>
+          <ul>
+            <li><a onclick="#">Coches para Bebe</a></li>
+            <li><a onclick="#">Cunas</a></li>
+            <li><a onclick="#">Encierros</a></li>
+            <li><a onclick="#">Cadenitas</a></li>
+            <li><a onclick="#">Moviles</a></li>
+            <li><a onclick="#">Silla para Autos</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="content contect_nosotros"><br />
+        <h2 class="subtitleConoscanos">Misión</h2>
+        <p>Brindar los mejores productos para consentir a tu Bebé en los primeros momentos de su vida desde la comodidad de tu hogar.</p>
+        <h2 class="subtitleConoscanos">Visión</h2>
+        <p>Ser líderes en la distribución de productos con la más alta calidad y tecnología para tu Bebé. Nuestro compromiso es la satisfacción total de nuestros clientes.</p>
+        <h2 class="subtitleConoscanos">Valores</h2>
+        <ul>
+        	<li>Satisfacción total.</li>
+            <li>Puntualidad en la entrega de tus productos.</li>
+            <li>Confianza.</li>
+        </ul>        
+      
+       <div class="photobanner">
+        <img class="first" src="images/logo-baby-color.png" alt="">
+        <img src="images/logo-baby-flyer.jpg" alt="">
+        <img src="images/logo-infan-tec.png" alt="">
+        <img src="images/logo-little-princess.jpg" alt="">
+        <img src="images/logo-little-racer.jpg" alt="">
+        <img src="images/logo-strawberry.png" alt="">
+        <img src="images/logo-baby-color.png" alt="">
+        <img src="images/logo-baby-flyer.jpg" alt="">
+        <img src="images/logo-infan-tec.png" alt="">
+        <img src="images/logo-little-princess.jpg" alt="">
+        <img src="images/logo-little-racer.jpg" alt="">
+        <img src="images/logo-strawberry.png" alt="">
+        <img src="images/logo-baby-color.png" alt="">
+        <img src="images/logo-baby-flyer.jpg" alt="">
+        <img src="images/logo-infan-tec.png" alt="">
+        <img src="images/logo-little-princess.jpg" alt="">
+        <img src="images/logo-little-racer.jpg" alt="">
+        <img src="images/logo-strawberry.png" alt="">
+        <img src="images/logo-baby-color.png" alt="">
+        <img src="images/logo-baby-flyer.jpg" alt="">
+        <img src="images/logo-infan-tec.png" alt="">
+        <img src="images/logo-little-princess.jpg" alt="">
+        <img src="images/logo-little-racer.jpg" alt="">
+        <img src="images/logo-strawberry.png" alt="">
+        <img src="images/logo-baby-color.png" alt="">
+        <img src="images/logo-baby-flyer.jpg" alt="">
+        <img src="images/logo-infan-tec.png" alt="">
+        <img src="images/logo-little-princess.jpg" alt="">
+        <img src="images/logo-little-racer.jpg" alt="">
+        <img src="images/logo-strawberry.png" alt="">
+        <img src="images/logo-baby-color.png" alt="">
+        <img src="images/logo-baby-flyer.jpg" alt="">
+        <img src="images/logo-infan-tec.png" alt="">
+        <img src="images/logo-little-princess.jpg" alt="">
+        <img src="images/logo-little-racer.jpg" alt="">
+        <img src="images/logo-strawberry.png" alt="">
+        <img src="images/logo-baby-color.png" alt="">
+        <img src="images/logo-baby-flyer.jpg" alt="">
+        <img src="images/logo-infan-tec.png" alt="">
+        <img src="images/logo-little-princess.jpg" alt="">
+        <img src="images/logo-little-racer.jpg" alt="">
+        <img src="images/logo-strawberry.png" alt="">
+        <img src="images/logo-baby-color.png" alt="">
+        <img src="images/logo-baby-flyer.jpg" alt="">
+        <img src="images/logo-infan-tec.png" alt="">
+        <img src="images/logo-little-princess.jpg" alt="">
+        <img src="images/logo-little-racer.jpg" alt="">
+        <img src="images/logo-strawberry.png" alt="">
+    </div>
+    
+  </div>
+   
+   
+    </div>
+    <footer>
+      <p class="copyright">&copy; 2014 www.dchicos.com. Todos los derechos reservados</p>           
+    </footer>
+  </div>
+</body>
+</html>

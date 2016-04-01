@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+
+<title>D' Chicos Contactenos</title>
+
+<link rel="stylesheet" type="text/css" href="assets/css/style.css" /> 
+<link rel="stylesheet" type="text/css" href="assets/css/sliderwall_thumbs_skin.css"/>	<!-- Include the CSS of the slider (the slider skin). -->
+<link rel="stylesheet" type="text/css" href="assets/css/slideshow_sample.css"/>				<!-- The general CSS of the entire HTML page. -->
+
+<script type="text/javascript" src="assets/js/jquery-1.7.1.min.js"></script>			<!-- You must include the JQuery file. -->
+<script type="text/javascript" src="assets/js/sliderwall-thumbs-1.1.2.js"></script>	<!-- You must include the SliderWall template. -->
+<script type="text/javascript" src="assets/js/main.js"></script>
+
+</head>
+
+<body>
+	<div id="main">
+    
+		{embed="shared/header"}
+        
+        <div id="site_content">
+         
+            {embed="shared/imageSliderShow"}
+                    
+            {embed="shared/sidebar"}
+          
+            <div class="content"> 
+          
+                <h2 class="mensaje">Envienos un Mensaje</h2> 
+                    
+                <form method="post" action="assets/php/EnviarEmail.php">
+                    <p>Nombre<input id="nombre" name="nombre" class="input_form2 form_margin"></p>
+                    <p>Telefono<input id="telefono" name="telefono" class="input_form2 form_margin2"></p>
+                    <p>Correo Electronico<input id="email" name="email" class="input_form2 form_margin3"></p>
+                    <p>Comentario<textarea id="comentario" name="comentario" class="form_margin4" rows="8" cols="35"></textarea></p>
+                    <input class="botton_submit2" type="submit" name="contact_submitted" value="Enviar Mensaje" />
+                 </form> 
+               
+                 <br>     
+               
+                 {embed="shared/photobanner"}
+           
+             </div>             
+        </div>
+        
+        {embed="shared/footer"}
+        
+	</div>
+</body>
+</html>
